@@ -1,67 +1,110 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.min.css">
 <link rel="stylesheet" href="index.css">
 <script src="https://unpkg.com/vue"></script>
 
+<div id="app">
 
-<section id="header" class="hero is-primary" style="margin-bottom: 20px;">
-<div class="hero-body">
-  <div class="container">
-    <h1 class="title">
-      Gerador De Currículos - FAPAM Social
-    </h1>
-    <h2 class="subtitle">
-      Gere currículos de forma simples, rápida e descomplicada.
-    </h2>
-  </div>
-</div>
-</section>
+  <section id="header" class="hero is-primary" style="margin-bottom: 20px;">
+    <div class="hero-body">
+      <div class="container">
+        <p>*work in progress*</p>
+        <h1 class="title is-1">Gerador De Currículos - FAPAM Social</h1>
+        <h2 class="subtitle is-2">Gere currículos de forma simples, rápida e descomplicada.</h2>
 
-<div id="app" class="container">
-
-  <div class="columns">
-
-  <div id="formulario" class="column">
-
-    <button id="printButton" v-on:click="printPage">Imprimir</button>
-
-    <div class="field">
-      <label class="label">Nome</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Marcus Vinicius Pereira" v-model="nome">
+        <button class="button " id="printButton" v-on:click="printPage">Imprimir</button>
       </div>
     </div>
-
-    <div class="field">
-      <label class="label">Idade</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Idade" v-model="idade">
-      </div>
-    </div>
+  </section>
 
 
-    <div class="field">
-      <label class="label">Estado Civil</label>
-      <div class="control">
-        <div class="select">
-          <select v-model="estadoCivil">
-            <option>solteiro</option>
-            <option>casado</option>
-          </select>
+  <section class="section">
+
+    <div class="container">
+
+        <div id="formulario">
+
+          <h4 class="title is-4">Dados Básicos</h4>
+          <hr>
+
+          <div class="columns">
+
+            <div class="column">
+
+              <div class="field">
+                <label class="label">Nome</label>
+                <div class="control">
+                  <input class="input" placeholder="Marcus Vinicius Pereira" v-model="nome">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="column">
+              <div class="field">
+                <label class="label">Idade</label>
+                <div class="control">
+                  <input class="input" placeholder="Idade" v-model="idade">
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="column">
+
+              <div class="field">
+                <label class="label">Estado Civil</label>
+                <div class="control">
+                  <div class="select">
+                    <select v-model="estadoCivil">
+                      <option>solteiro</option>
+                      <option>casado</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!--<h3 class="title">Objetivo</h3>-->
+          <!--<hr>-->
+
+          <!--<div class="field">-->
+            <!--<label class="label">Descrição do Objetivo</label>-->
+            <!--<div class="control">-->
+              <!--<textarea class="input" type="text" placeholder="Objetivo" v-model="objetivo">-->
+          <!--</textarea>-->
+            <!--</div>-->
+          <!--</div>-->
+
         </div>
-      </div>
     </div>
 
- </div>
+  </section>
 
-  <div id="preview" class="column">
-    <p v-if="nome">{{nome}}</p>
-    <p>
-      <span v-if="idade">{{idade}} anos,</span>
-      <span v-if="estadoCivil">{{estadoCivil}}.</span>
-    </p>
-  </div>
+  <!--<section class="section" id="preview">-->
 
-  </div>
+      <!--<p v-if="nome">{{nome}}</p>-->
+      <!--<p>-->
+        <!--<span v-if="idade">{{idade}} anos,</span>-->
+        <!--<span v-if="estadoCivil">{{estadoCivil}}.</span>-->
+      <!--</p>-->
+
+      <!--<h1>Objetivo</h1>-->
+      <!--<p>{{objetivo}}</p>-->
+
+      <!--<h1>Formação</h1>-->
+      <!--<p>{{formacao.nomeInstituicao}}</p>-->
+      <!--<p>{{formacao.descricao}}</p>-->
+      <!--<p>{{formacao.periodo}}</p>-->
+
+  <!--</section>-->
+
 </div>
 
 <script src="index.js"></script>
