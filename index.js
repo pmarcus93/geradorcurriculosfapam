@@ -1,11 +1,3 @@
-Vue.component('telefone', {
-    template: "<input v-model='numero'>",
-    data: {
-      ddd: '',
-      numero: ''
-    }
-});
-
 var app = new Vue({
   el: '#app',
   data: {
@@ -17,9 +9,8 @@ var app = new Vue({
     telefone: []
   },
   methods: {
-    printPage: function(){
+    printPage: function() {
       window.print();
     }
   }
 });
-
