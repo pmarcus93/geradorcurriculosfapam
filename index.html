@@ -21,89 +21,262 @@
 
 
   <section class="section">
-
     <div class="container">
+      <div id="formulario">
 
-        <div id="formulario">
+        <h4 class="title is-4">Dados Básicos</h4>
+        <hr>
 
-          <h4 class="title is-4">Dados Básicos</h4>
-          <hr>
+        <div class="columns">
 
-          <div class="columns">
+          <div class="column">
 
-            <div class="column">
-
-              <div class="field">
-                <label class="label">Nome</label>
-                <div class="control">
-                  <input class="input" placeholder="Marcus Vinicius Pereira" v-model="nome">
-                </div>
+            <div class="field">
+              <label class="label">Nome</label>
+              <div class="control">
+                <input class="input" v-model="nome">
               </div>
-
-            </div>
-
-            <div class="column">
-              <div class="field">
-                <label class="label">Idade</label>
-                <div class="control">
-                  <input class="input" placeholder="Idade" v-model="idade">
-                </div>
-              </div>
-
-
-            </div>
-
-            <div class="column">
-
-              <div class="field">
-                <label class="label">Estado Civil</label>
-                <div class="control">
-                  <div class="select">
-                    <select v-model="estadoCivil">
-                      <option>solteiro</option>
-                      <option>casado</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
             </div>
 
           </div>
 
-          <!--<h3 class="title">Objetivo</h3>-->
-          <!--<hr>-->
+          <div class="column">
 
-          <!--<div class="field">-->
-            <!--<label class="label">Descrição do Objetivo</label>-->
-            <!--<div class="control">-->
-              <!--<textarea class="input" type="text" placeholder="Objetivo" v-model="objetivo">-->
-          <!--</textarea>-->
-            <!--</div>-->
-          <!--</div>-->
+            <div class="field">
+              <label class="label">Idade</label>
+              <div class="control">
+                <input class="input" type="number" v-model="idade">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Estado Civil</label>
+              <div class="control">
+                <div class="select">
+                  <select v-model="estadoCivil">
+                    <option>solteiro</option>
+                    <option>casado</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
 
         </div>
+
+        <div class="columns">
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Telefone</label>
+              <div class="control">
+                <input class="input" type="tel">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="email">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <h4 class="title is-4">Endereço</h4>
+        <hr>
+
+        <div class="columns">
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Rua</label>
+              <div class="control">
+                <input class="input" type="number">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Número</label>
+              <div class="control">
+                <input class="input">
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Bairro</label>
+              <div class="control">
+                <input class="input">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Cidade</label>
+              <div class="control">
+                <input class="input">
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <h4 class="title is-4">Formação</h4>
+        <hr>
+
+        <div class="columns">
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Instituição</label>
+              <div class="control">
+                <input class="input">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Descrição</label>
+              <div class="control">
+                <input class="input">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Data de Início</label>
+              <div class="control">
+                <input class="input" type="date">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Data de Conclusão</label>
+              <div class="control">
+                <input class="input" type="date">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <h4 class="title is-4">Experiência Profissional</h4>
+        <hr>
+
+
+        <div class="columns">
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Empresa</label>
+              <div class="control">
+                <input class="input">
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Cargo</label>
+              <div class="control">
+                <input class="input">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Descrição do Cargo</label>
+              <div class="control">
+                <input class="input">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Data da Entrada</label>
+              <div class="control">
+                <input class="input" type="date">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Data de Saída</label>
+              <div class="control">
+                <input class="input" type="date">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
-
   </section>
+</div>
 
-  <!--<section class="section" id="preview">-->
+</section>
 
-      <!--<p v-if="nome">{{nome}}</p>-->
-      <!--<p>-->
-        <!--<span v-if="idade">{{idade}} anos,</span>-->
-        <!--<span v-if="estadoCivil">{{estadoCivil}}.</span>-->
-      <!--</p>-->
+<section class="section" id="preview">
 
-      <!--<h1>Objetivo</h1>-->
-      <!--<p>{{objetivo}}</p>-->
+  <div class="container">
 
-      <!--<h1>Formação</h1>-->
-      <!--<p>{{formacao.nomeInstituicao}}</p>-->
-      <!--<p>{{formacao.descricao}}</p>-->
-      <!--<p>{{formacao.periodo}}</p>-->
+  </div>
 
-  <!--</section>-->
+</section>
 
 </div>
 
