@@ -34,7 +34,7 @@
             <div class="field">
               <label class="label">Nome</label>
               <div class="control">
-                <input class="input" v-model="nome">
+                <input class="input" v-model="dadosBasicos.nome">
               </div>
             </div>
 
@@ -45,7 +45,7 @@
             <div class="field">
               <label class="label">Idade</label>
               <div class="control">
-                <input class="input" type="number" v-model="idade">
+                <input class="input" type="number" v-model="dadosBasicos.idade">
               </div>
             </div>
 
@@ -54,12 +54,15 @@
           <div class="column">
 
             <div class="field">
-              <label class="label">Estado Civil</label>
+              <label class="label">Gênero</label>
               <div class="control">
                 <div class="select">
-                  <select v-model="estadoCivil">
-                    <option>solteiro</option>
-                    <option>casado</option>
+                  <select v-model="dadosBasicos.genero">
+                    <option>Feminino</option>
+                    <option>Masculino</option>
+                    <option>Trans-feminino</option>
+                    <option>Trans-masculino</option>
+                    <option>Não-binário</option>
                   </select>
                 </div>
               </div>
@@ -68,6 +71,20 @@
           </div>
 
 
+          <div class="column">
+
+            <div class="field">
+              <label class="label">Estado Civil</label>
+              <div class="control">
+                <div class="select">
+                  <select v-model="dadosBasicos.estadoCivil">
+                    <option>solteiro</option>
+                    <option>casado</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
 
@@ -78,7 +95,8 @@
             <div class="field">
               <label class="label">Telefone</label>
               <div class="control">
-                <input class="input" type="tel">
+                <input class="input" v-model="contato.telefone" type="tel"
+                       pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" maxlength="15">
               </div>
             </div>
 
@@ -89,7 +107,7 @@
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
-                <input class="input" type="email">
+                <input class="input" v-model="contato.email" type="email">
               </div>
             </div>
 
@@ -103,50 +121,50 @@
         <div class="columns">
 
           <div class="column">
-
             <div class="field">
               <label class="label">Rua</label>
               <div class="control">
-                <input class="input" type="number">
+                <input class="input" v-model="endereco.rua">
               </div>
             </div>
-
           </div>
 
           <div class="column">
-
             <div class="field">
               <label class="label">Número</label>
               <div class="control">
-                <input class="input">
+                <input class="input" v-model="endereco.numero" type="number">
               </div>
             </div>
+          </div>
 
+          <div class="column">
+            <div class="field">
+              <label class="label">Complemento</label>
+              <div class="control">
+                <input class="input" v-model="endereco.complemento">
+              </div>
+            </div>
           </div>
 
 
           <div class="column">
-
             <div class="field">
               <label class="label">Bairro</label>
               <div class="control">
-                <input class="input">
+                <input class="input" v-model="endereco.bairro">
               </div>
             </div>
-
           </div>
 
           <div class="column">
-
             <div class="field">
               <label class="label">Cidade</label>
               <div class="control">
-                <input class="input">
+                <input class="input" v-model="endereco.cidade">
               </div>
             </div>
-
           </div>
-
 
         </div>
 
@@ -160,7 +178,7 @@
             <div class="field">
               <label class="label">Instituição</label>
               <div class="control">
-                <input class="input">
+                <input class="input" v-model="formacao.instituicao">
               </div>
             </div>
 
@@ -171,7 +189,7 @@
             <div class="field">
               <label class="label">Descrição</label>
               <div class="control">
-                <input class="input">
+                <input class="input" v-model="formacao.descricao">
               </div>
             </div>
 
@@ -182,7 +200,7 @@
             <div class="field">
               <label class="label">Data de Início</label>
               <div class="control">
-                <input class="input" type="date">
+                <input class="input" type="date" v-model="formacao.dataIngresso">
               </div>
             </div>
 
@@ -193,7 +211,7 @@
             <div class="field">
               <label class="label">Data de Conclusão</label>
               <div class="control">
-                <input class="input" type="date">
+                <input class="input" type="date" v-model="formacao.dataConclusao">
               </div>
             </div>
 
@@ -214,7 +232,7 @@
             <div class="field">
               <label class="label">Empresa</label>
               <div class="control">
-                <input class="input">
+                <input class="input" v-model="experienciaProfissional.empresa">
               </div>
             </div>
           </div>
@@ -224,7 +242,7 @@
             <div class="field">
               <label class="label">Cargo</label>
               <div class="control">
-                <input class="input">
+                <input class="input" v-model="experienciaProfissional.cargo">
               </div>
             </div>
 
@@ -233,9 +251,9 @@
           <div class="column">
 
             <div class="field">
-              <label class="label">Descrição do Cargo</label>
+              <label class="label">Descrição</label>
               <div class="control">
-                <input class="input">
+                <input class="input" v-model="experienciaProfissional.descricaoCargo">
               </div>
             </div>
 
@@ -246,7 +264,7 @@
             <div class="field">
               <label class="label">Data da Entrada</label>
               <div class="control">
-                <input class="input" type="date">
+                <input class="input" type="date" v-model="experienciaProfissional.dataEntrada">
               </div>
             </div>
 
@@ -257,7 +275,7 @@
             <div class="field">
               <label class="label">Data de Saída</label>
               <div class="control">
-                <input class="input" type="date">
+                <input class="input" type="date" v-model="experienciaProfissional.dataSaida">
               </div>
             </div>
 
@@ -266,18 +284,43 @@
       </div>
     </div>
   </section>
+
+
+  <section class="section">
+
+    <div class="container">
+
+      <h1 class="title">Preview - Work In Progress</h1>
+
+      <div id="preview">
+
+        <p v-if="dadosBasicos.nome">{{dadosBasicos.nome}}</p>
+        <p v-if="dadosBasicos.idade && dadosBasicos.estadoCivil">{{dadosBasicos.idade}} anos, {{dadosBasicos.estadoCivil}}.</p>
+        <!--<p>{{dadosBasicos.genero}}</p>-->
+        <p v-if="dadosBasicos.telefone">Telefone: {{contato.telefone}}<span v-if="contato.email">- {{contato.email}}</span></p>
+        <p v-if="endereco.rua">
+          Rua {{endereco.rua}}, {{endereco.numero}} <span v-if="endereco.complemento">({{endereco.complemento}})</span>.
+          Bairro {{endereco.bairro}} - {{endereco.cidade}}</p>
+
+        <h5 class="subtitle is-5" v-if="formacao.instituicao">Formação</h5>
+        <p v-if="formacao.instituicao">{{formacao.instituicao}}</p>
+        <p v-if="formacao.descricao">{{formacao.descricao}}</p>
+        <p v-if="formacao.dataIngresso && formacao.dataConclusao">De {{formacao.dataIngresso}} à {{formacao.dataConclusao}}</p>
+
+        <h5 v-if="experienciaProfissional.empresa" class="subtitle is-5">Experiência Profissional</h5>
+        <p v-if="experienciaProfissional.empresa">{{experienciaProfissional.empresa}}</p>
+        <p>{{experienciaProfissional.cargo}}</p>
+        <p>{{experienciaProfissional.descricaoCargo}}</p>
+        <p v-if="experienciaProfissional.dataEntrada && experienciaProfissional.dataSaida">
+          Período: de {{experienciaProfissional.dataEntrada}} à {{experienciaProfissional.dataSaida}}
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
 </div>
 
-</section>
-
-<section class="section" id="preview">
-
-  <div class="container">
-
-  </div>
-
-</section>
-
-</div>
 
 <script src="index.js"></script>
