@@ -9,7 +9,7 @@ var app = new Vue({
         },
         contato: {
             email : [""],
-            telefones: [{numero: ''}]
+            telefones: [""]
         },
         endereco: {
             rua: '',
@@ -37,11 +37,23 @@ var app = new Vue({
         printPage: function() {
             window.print();
         },
+        addTelefone: function() {
+            this.contato.telefones.push('');
+        },
+        removeTelefone: function(index){
+            this.contato.telefones.splice(index,1);
+            if(!this.contato.telefones.length) {
+                this.addTelefone();
+            }
+        },
         addFormacao: function () {
             this.formacoes.push({instituicao: '', descricao: '', dataIngresso: '', dataConclusao: ''});
         },
         removeFormacao: function(index) {
             this.formacoes.splice(index,1);
+            if(!this.formacoes.length) {
+                this.addFormacao();
+            }
         }
     }
 });

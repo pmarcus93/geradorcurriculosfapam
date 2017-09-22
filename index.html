@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="index.css">
 <script src="https://unpkg.com/vue"></script>
 
@@ -29,7 +30,7 @@
 
         <div class="columns">
 
-          <div class="column">
+          <div class="column is-3">
 
             <div class="field">
               <label class="label">Nome</label>
@@ -40,7 +41,7 @@
 
           </div>
 
-          <div class="column">
+          <div class="column is-1">
 
             <div class="field">
               <label class="label">Idade</label>
@@ -51,7 +52,7 @@
 
           </div>
 
-          <div class="column">
+          <div class="column is-2">
 
             <div class="field">
               <label class="label">Gênero</label>
@@ -71,7 +72,7 @@
           </div>
 
 
-          <div class="column">
+          <div class="column is-2">
 
             <div class="field">
               <label class="label">Estado Civil</label>
@@ -90,19 +91,36 @@
 
         <div class="columns">
 
-          <div v-for="telefone in contato.telefones" class="column">
+          <div v-for="telefone in contato.telefones" class="column is-3">
 
-            <div class="field">
-              <label class="label">Telefone</label>
-              <div class="control">
-                <input class="input" v-model="telefone.numero" type="tel"
-                       pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" maxlength="15">
+            <div class="columns">
+              <div class="column">
+                <div class="field">
+                  <label class="label">Telefone</label>
+                  <div class="control">
+                    <input class="input" v-model="telefone" type="tel"
+                           pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" maxlength="15">
+                  </div>
+                </div>
               </div>
+
+              <div class="column is-2 xy-centered">
+                <button class="button is-primary is-fullwidth" v-on:click="addTelefone()">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+
+              <div class="column is-2 xy-centered">
+                <button class="button is-danger is-fullwidth" v-on:click="removeTelefone(telefone)">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
+              </div>
+
             </div>
 
           </div>
 
-          <div class="column">
+          <div class="column is-3">
 
             <div class="field">
               <label class="label">Email</label>
@@ -168,20 +186,12 @@
 
         </div>
 
-
-        <div class="level">
-          <div class="level-left">
-            <div class="level-item">
-              <h4 class="title is-4">Formação</h4>
-            </div>
-          </div>
-          <div class="level-right">
-            <button class="level-item button is-primary"
-              v-on:click="addFormacao">Adicionar Nova Formação</button>
+        <div class="columns">
+          <div class="column">
+            <h4 class="title is-4">Formação</h4>
+            <hr>
           </div>
         </div>
-
-        <hr>
 
         <div v-for="(formacao, index) in formacoes" class="columns">
 
@@ -229,16 +239,33 @@
 
           </div>
 
-          <div class="column">
-            <button class="button is-danger" v-on:click="removeFormacao(formacao)">X</button>
+          <div class="column is-1 xy-centered">
+            <button class="button is-danger is-fullwidth" v-on:click="removeFormacao(formacao)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
           </div>
+
+          <div class="column is-1 xy-centered">
+            <button class="level-item button is-primary is-fullwidth"
+                    v-on:click="addFormacao"><i class="fa fa-plus" aria-hidden="true"></i></button>
+          </div>
+
+
 
         </div>
 
+        <div class="columns">
+          <div class="column is-3 is-offset-9">
 
+          </div>
+        </div>
 
-        <h4 class="title is-4">Experiência Profissional</h4>
-        <hr>
+        <div class="columns">
+          <div class="column">
+            <h4 class="title is-4">Experiência Profissional</h4>
+            <hr>
+          </div>
+        </div>
 
 
         <div class="columns">
